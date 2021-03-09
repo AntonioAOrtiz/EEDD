@@ -19,8 +19,13 @@ package com.mycompany.criba;
 * @version 1.0 Marzo 2021 (FB)
 */
 public class Criba {
-
+	/**
+	 * Método que convierte todas las posiciones no primas en false
+	 * @param esPrimo array de booleanos con todos sus elementos en true excepto los dos primeros
+	 * @return esPrimo devuelve el array dado
+	 */
 	public boolean[] criba(boolean[]esPrimo) {
+		//Inicializar bucle de criba de Eratóstenes
 		for (int i=2; i<Math.sqrt(esPrimo.length); i++) {
 			if (esPrimo[i]) {
 				// Eliminar los múltiplos de i
@@ -35,18 +40,32 @@ public class Criba {
 		
 	}
 				
-			// ¿Cuántos primos hay?
+	/**
+	 * Método que devuelve el total de true en un array de booleanos
+	 * @param esPrimo es un array de boolean donde los primos son true
+	 * @return un entero con el numero de primos que hay en el array
+	 */
 	public int cuentaPrimos(boolean[] esPrimo) {
+			//Variable cuenta para contar el total de true 
 			int cuenta = 0;
+			//Bucle que recorre el array de booleanos y cuenta el número de true
 			for (int i=0; i<esPrimo.length; i++) {
 				if (esPrimo[i]) {
 				cuenta++;
 			}
 			}
 			return cuenta;}
-			
+	
+	/**
+	 * Método que convierte el array de booleanos de numeros primos en un array de numeros enteros
+	 * @param primos es un array de enteros igual al tamaño del número de true en esPrimo
+	 * @param esPrimo es un array de boolean donde los primos son true
+	 * @return primos con todas sus posiciones convertidas en primos ordenados numéricamente
+	 */
 	public int[] arrayDePrimos(int[] primos, boolean[] esPrimo) {
+				//Variable contador para contar la cantidad de true
 				int contador=0;
+				//Bucle que recorre el array de booleanos de primos y lo convierte en un array de enteros
 				for (int i=0; i<esPrimo.length; i++) {
 						if (esPrimo[i]) {
 							primos[contador] = i;
@@ -57,7 +76,7 @@ public class Criba {
 		
 	}
 	/**
-	* Generar números primos de 1 a max
+	* Método para generar números primos de 1 a max
 	* @param max es el valor máximo
 	* @return Vector de números primos
 	*/
@@ -65,13 +84,14 @@ public class Criba {
 		if (max >= 2) {
 			// Declaraciones
 			max++;
-			// Tamaño del array
+			// Generar array de booleanos
 			boolean[] esPrimo = new boolean[max];
 			
-			// Inicializar el array
+			// Inicializar el array de primos
 			for (int i=2; i<max; i++) {
 				esPrimo[i] = true;}
 			criba(esPrimo);
+			// Generar array de enteros con los números primos
 			int[]primos=new int[cuentaPrimos(esPrimo)];
 			primos=arrayDePrimos(primos,esPrimo);
 			return primos;}
