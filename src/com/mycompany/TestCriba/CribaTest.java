@@ -1,4 +1,4 @@
-package com.mycompany.criba;
+package com.mycompany.TestCriba;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -6,9 +6,11 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
-class CribaTest {
+import com.mycompany.criba.Criba;
+
+public class CribaTest {
 	/**
-	 * Test para el método cuentaPrimos(boolean[]) de la clase Criba.
+	 * Test para el método cuentaPrimos de la clase Criba.
 	 */
 	@Test
 	public void testCuentaPrimos() {
