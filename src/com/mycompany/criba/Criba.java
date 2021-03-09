@@ -29,7 +29,7 @@ public class Criba {
 	* @param max es el valor máximo
 	* @return Vector de números primos
 	*/
-	public static int[] generarPrimos (int max) {
+	public int[] generarPrimos (int max) {
 		int i,j;
 		if (max >= 2) {
 			// Declaraciones
