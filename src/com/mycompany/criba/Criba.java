@@ -43,22 +43,7 @@ public class Criba {
 			
 		
 	}
-	public int[] generarPrimos (int max) {
-		if (max >= 2) {
-			// Declaraciones
-			max++; // Tamaño del array
-			boolean[] esPrimo = new boolean[max];
-			
-			// Inicializar el array
-			for (int i=2; i<max; i++) {
-				esPrimo[i] = true;}
-			
-		
-			
-		
-			
-		
-			
+				
 			// ¿Cuántos primos hay?
 	public int cuentaPrimos(boolean[] esPrimo) {
 			int cuenta = 0;
@@ -67,7 +52,7 @@ public class Criba {
 				cuenta++;
 			}
 			}
-			return cuenta;
+			return cuenta;}
 			
 	public int[] arrayDePrimos(int[] primos, boolean[] esPrimo) {
 				int contador=0;
@@ -79,5 +64,26 @@ public class Criba {
 					}
 				return primos;
 		
-	}	
+	}
+	
+	public int[] generarPrimos (int max) {
+		if (max >= 2) {
+			// Declaraciones
+			max++; 
+			// Tamaño del array
+			boolean[] esPrimo = new boolean[max];
+			
+			// Inicializar el array
+			for (int i=2; i<max; i++) {
+				esPrimo[i] = true;}
+			criba(esPrimo);
+			int[]primos=new int[cuentaPrimos(esPrimo)];
+			primos=arrayDePrimos(primos,esPrimo);
+			return primos;}
+			else {
+				return new int [0];
+			}
+	}
 }
+			
+
