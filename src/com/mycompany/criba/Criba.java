@@ -29,6 +29,20 @@ public class Criba {
 	* @param max es el valor máximo
 	* @return Vector de números primos
 	*/
+	public boolean[] criba(boolean[]esPrimo) {
+		for (int i=2; i<Math.sqrt(esPrimo.length)+1; i++) {
+			if (esPrimo[i]) {
+				// Eliminar los múltiplos de i
+				for ( int j=2*i; j<(esPrimo.length)+1; j+=i) {
+				esPrimo[j] = false;
+				
+			}
+				}
+			}
+		return esPrimo;
+			
+		
+	}
 	public int[] generarPrimos (int max) {
 		if (max >= 2) {
 			// Declaraciones
@@ -39,23 +53,21 @@ public class Criba {
 			for (int i=2; i<max; i++) {
 				esPrimo[i] = true;}
 			
-			// Eliminar el 0 y el 1, que no son primos
+		
 			
-			// Criba
-			for (int i=2; i<Math.sqrt(max)+1; i++) {
-				if (esPrimo[i]) {
-					// Eliminar los múltiplos de i
-					for (j=2*i; j<dim; j+=i)
-					esPrimo[j] = false;
-				}
-			}
+		
+			
+		
 			
 			// ¿Cuántos primos hay?
+	public int cuentaPrimos(boolean[] esPrimo) {
 			int cuenta = 0;
-			for (int i=0; i<max; i++) {
-				if (esPrimo[i])
+			for (int i=0; i<esPrimo.length; i++) {
+				if (esPrimo[i]) {
 				cuenta++;
 			}
+			}
+			return cuenta;
 			
 			// Rellenar el vector de números primos
 			int[] primos = new int[cuenta];
