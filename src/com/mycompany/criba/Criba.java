@@ -69,15 +69,15 @@ public class Criba {
 			}
 			return cuenta;
 			
-			// Rellenar el vector de números primos
-			int[] primos = new int[cuenta];
-			for (int i=0,int j=0; i<max; i++) {
-				if (esPrimo[i])
-				primos[j++] = i;
-			}
-			return primos;
-		} else { // max < 2
-			return new int[0]; // Vector vacío
-		}
+	public int[] arrayDePrimos(int[] primos, boolean[] esPrimo) {
+				int contador=0;
+				for (int i=0; i<esPrimo.length; i++) {
+						if (esPrimo[i]) {
+							primos[contador] = i;
+							contador++;
+							}
+					}
+				return primos;
+		
 	}	
 }
