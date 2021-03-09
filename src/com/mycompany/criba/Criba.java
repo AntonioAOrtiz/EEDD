@@ -19,16 +19,12 @@ package com.mycompany.criba;
 * @version 1.0 Marzo 2021 (FB)
 */
 public class Criba {
-	/**
-	* Generar números primos de 1 a max
-	* @param max es el valor máximo
-	* @return Vector de números primos
-	*/
+
 	public boolean[] criba(boolean[]esPrimo) {
-		for (int i=2; i<Math.sqrt(esPrimo.length)+1; i++) {
+		for (int i=2; i<Math.sqrt(esPrimo.length); i++) {
 			if (esPrimo[i]) {
 				// Eliminar los múltiplos de i
-				for ( int j=2*i; j<(esPrimo.length)+1; j+=i) {
+				for ( int j=2*i; j<(esPrimo.length); j+=i) {
 				esPrimo[j] = false;
 				
 			}
@@ -60,7 +56,11 @@ public class Criba {
 				return primos;
 		
 	}
-	
+	/**
+	* Generar números primos de 1 a max
+	* @param max es el valor máximo
+	* @return Vector de números primos
+	*/
 	public int[] generarPrimos (int max) {
 		if (max >= 2) {
 			// Declaraciones
