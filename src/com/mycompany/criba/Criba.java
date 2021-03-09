@@ -5,12 +5,7 @@ package com.mycompany.criba;
 * un número máximo especificado por el usuario. Como
 * algoritmo se utiliza la criba de Eratóstenes.
 * <p>
-* Eratóstenes de Cirene (276 a.C., Cirene, Libia – 194
-* a.C., Alejandría, Egipto) fue el primer hombre que
-* calculó la circunferencia de la Tierra. También
-* se le conoce por su trabajo con calendarios que ya
-* incluían años bisiestos y por dirigir la mítica
-* biblioteca de Alejandría.
+* 
 * <p>
 * El algoritmo es bastante simple: Dado un vector de
 * enteros empezando en 2, se tachan todos los múltiplos
@@ -20,8 +15,8 @@ package com.mycompany.criba;
 * del valor máximo. Todos los números que queden sin
 * tachar son números primos.
 *
-* @author Fernando Berzal
-* @version 1.0 Enero’2005 (FB)
+* @author Antonio Ortiz
+* @version 1.0 Marzo 2021 (FB)
 */
 public class Criba {
 	/**
@@ -69,7 +64,7 @@ public class Criba {
 	public int[] generarPrimos (int max) {
 		if (max >= 2) {
 			// Declaraciones
-			max++; 
+			max++;
 			// Tamaño del array
 			boolean[] esPrimo = new boolean[max];
 			
